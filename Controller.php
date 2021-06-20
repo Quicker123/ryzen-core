@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core;
+namespace ryzen\ryzen;
 
-use app\core\middlewares\BaseMiddleware;
+use ryzen\ryzen\middlewares\BaseMiddleware;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Controller
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 class Controller

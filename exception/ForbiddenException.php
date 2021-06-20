@@ -1,11 +1,11 @@
 <?php
 
-namespace app\core\exception;
+namespace ryzen\ryzen\exception;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class ForbiddenException
- * @package app\core\exception
+ * @package ryzen\ryzen\exception
  */
 
 class ForbiddenException extends \Exception

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\core;
+namespace ryzen\ryzen;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Model
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 abstract class Model

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\core;
+namespace ryzen\ryzen;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Request
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 class Request

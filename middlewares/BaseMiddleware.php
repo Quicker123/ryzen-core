@@ -1,11 +1,11 @@
 <?php
 
-namespace app\core\middlewares;
+namespace ryzen\ryzen\middlewares;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class BaseMiddleware
- * @package app\core\middlewares
+ * @package ryzen\ryzen\middlewares
  */
 
 abstract class BaseMiddleware

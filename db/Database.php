@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core\db;
+namespace ryzen\ryzen\db;
 
-use app\core\Application;
+use ryzen\ryzen\Application;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Database
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 class Database

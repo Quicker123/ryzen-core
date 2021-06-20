@@ -1,14 +1,14 @@
 <?php
 
-namespace app\core\middlewares;
+namespace ryzen\ryzen\middlewares;
 
-use app\core\Application;
-use app\core\exception\ForbiddenException;
+use ryzen\ryzen\Application;
+use ryzen\ryzen\exception\ForbiddenException;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class AuthMiddleware
- * @package app\core\middlewares
+ * @package ryzen\ryzen\middlewares
  */
 
 class AuthMiddleware extends BaseMiddleware

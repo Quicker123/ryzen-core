@@ -1,15 +1,15 @@
 <?php
 
-namespace app\core\db;
+namespace ryzen\ryzen\db;
 
-use app\core\Application;
-use app\core\Model;
+use ryzen\ryzen\Application;
+use ryzen\ryzen\Model;
 use app\models;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class DbModel
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 abstract class DbModel extends Model

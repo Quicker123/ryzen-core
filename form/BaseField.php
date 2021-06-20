@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core\form;
+namespace ryzen\ryzen\form;
 
-use app\core\Model;
+use ryzen\ryzen\Model;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class BaseField
- * @package app\core\form
+ * @package ryzen\ryzen\form
  */
 
 abstract class BaseField
@@ -21,7 +21,7 @@ abstract class BaseField
      * @param string $attribute
      */
 
-    public function __construct(\app\core\Model $model, string $attribute)
+    public function __construct(\ryzen\ryzen\Model $model, string $attribute)
     {
         $this->model = $model;
         $this->attribute = $attribute;

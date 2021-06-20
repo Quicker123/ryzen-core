@@ -1,11 +1,11 @@
 <?php
 
-namespace app\core\exception;
+namespace ryzen\ryzen\exception;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class NotFoundException
- * @package app\core\exception
+ * @package ryzen\ryzen\exception
  */
 
 class NotFoundException extends \Exception

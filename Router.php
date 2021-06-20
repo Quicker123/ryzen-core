@@ -1,14 +1,14 @@
 <?php
 
-namespace app\core;
+namespace ryzen\ryzen;
 
-use app\core\exception\ForbiddenException;
-use app\core\exception\NotFoundException;
+use ryzen\ryzen\exception\ForbiddenException;
+use ryzen\ryzen\exception\NotFoundException;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Router
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 class Router

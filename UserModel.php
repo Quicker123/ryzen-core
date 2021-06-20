@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core;
+namespace ryzen\ryzen;
 
-use app\core\db\DbModel;
+use ryzen\ryzen\db\DbModel;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class UserModel
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 abstract class UserModel extends DbModel

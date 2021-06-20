@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core\form;
+namespace ryzen\ryzen\form;
 
-use app\core\Model;
+use ryzen\ryzen\Model;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Form
- * @package app\core\form
+ * @package ryzen\ryzen\form
  */
 
 class Form

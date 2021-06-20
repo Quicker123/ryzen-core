@@ -1,15 +1,15 @@
 <?php
 
-namespace app\core;
+namespace ryzen\ryzen;
 
-use app\core\db\Database;
-use app\core\db\DbModel;
+use ryzen\ryzen\db\Database;
+use ryzen\ryzen\db\DbModel;
 use app\models\User;
 
 /**
  * @author razoo.choudhary@gmail.com
  * Class Application
- * @package app\core
+ * @package ryzen\ryzen
  */
 
 class Application
