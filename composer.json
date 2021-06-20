@@ -7,5 +7,10 @@
             "email": "52706390+razoo-choudhary@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ryzen\\ryzen": "."
+        }
+    }
 }
