@@ -1,0 +1,11 @@
+{
+    "name": "ryzen/ryzen",
+    "description": "PHP RY FrameWork Developed By Ry-Zen",
+    "authors": [
+        {
+            "name": "Raju Choudhary",
+            "email": "52706390+razoo-choudhary@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+} 
