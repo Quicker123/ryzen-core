@@ -12,11 +12,27 @@ class View
 {
     public string $title = '';
 
+    public function replacer($container, $viewContent = ''): array {
+
+        $stringsToReplace = array(
+            '{{content}}' => $viewContent,
+            '{{_csrf()}}' => Application::$app->session->get('csrf_token_auto_gen'),
+            '@inp_csrf()' => '<input type="hidden" name="_csrf" value="'.Application::$app->session->get('csrf_token_auto_gen').'" >',
+        );
+
+        if($container === 'key'){
+            return array_keys($stringsToReplace);
+        }else{
+            return array_values($stringsToReplace);
+        }
+    }
+
     public function renderView($view, $params = []){
 
         $viewContent = $this->renderOnlyView($view, $params);
         $layoutContent = $this->layoutContent();
-        return str_replace('{{content}}',$viewContent, $layoutContent);
+        return str_replace($this->replacer('key'),$this->replacer('value',$viewContent), $layoutContent);
+
     }
 
     protected function layoutContent(){
@@ -50,4 +66,5 @@ class View
         include_once Application::$ROOT_DIR."/views/$view.ry.php";
         return ob_get_clean();
     }
+
 }

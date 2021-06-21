@@ -19,4 +19,8 @@ class Response
 
         header('Location:'.$string);
     }
+    public function json($jsonArray){
+
+        return json_encode($jsonArray);
+    }
 }

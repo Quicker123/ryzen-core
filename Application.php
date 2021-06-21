@@ -4,6 +4,7 @@ namespace ryzen\ryzen;
 
 use ryzen\ryzen\db\Database;
 use ryzen\ryzen\db\DbModel;
+use ryzen\ryzen\func\BaseFunctions;
 use app\models\User;
 
 /**
@@ -25,7 +26,9 @@ class Application
     public Session $session;
     public Database $db;
     public ?DbModel $user;
+    public BaseFunctions $functions;
     public View $view;
+
 
     public static Application $app;
     public ?Controller $controller = null;
@@ -42,6 +45,8 @@ class Application
         $this->router   = new Router($this->request, $this->response);
         $this->view     = new View();
         $this->db       = new Database($config['db']);
+        $this->functions= new BaseFunctions($config['functionSetRule']);
+        $this->session->set('csrf_token_auto_gen',bin2hex(random_bytes(32)));
 
         $primaryValue = $this->session->get('user');
         if($primaryValue){
@@ -108,4 +113,5 @@ class Application
 
         return !self::$app->user;
     }
+
 }

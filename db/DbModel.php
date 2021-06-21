@@ -14,7 +14,6 @@ use app\models;
 
 abstract class DbModel extends Model
 {
-
     abstract public static function tableName(): string;
 
     abstract public static function attributes(): array;
@@ -23,19 +22,50 @@ abstract class DbModel extends Model
 
     public static function findOne($where){
 
+        return self::getAll($where,'single');
+    }
+
+    public static function getAll($where = [],$objectType =''){
+
         $tableName  = static::tableName();
-        $attributes = array_keys($where);
-        $sql        = implode("AND ",array_map(fn($attr)=>"$attr = :$attr", $attributes));
-        $statement  = self::prepare("SELECT * FROM $tableName WHERE $sql");
 
-        foreach ($where as $key => $item){
+        if($where){
+            $attributes = array_keys($where);
+            $sql        = implode("AND ",array_map(fn($attr)=>"$attr = :$attr", $attributes));
+            $statement  = self::prepare("SELECT * FROM $tableName WHERE $sql");
+            foreach ($where as $key => $item){
+                $statement->bindValue(":$key", $item);
+            }
+        }else{
 
-            $statement->bindValue(":$key", $item);
+            $statement  = self::prepare("SELECT * FROM $tableName");
         }
 
         $statement->execute();
 
-        return $statement->fetchObject(static::class);
+        if($objectType == 'single'){
+
+            return $statement->fetchObject(static::class);
+        }
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public static function update(array $data, array $where){
+
+        $tableName          = static::tableName();
+        $attributes         = array_keys($data);
+        $whereAttribute     = array_keys($where);
+
+        $toSET              = implode(',' ,array_map(fn($attr)=>"$attr = :$attr", $attributes));
+        $whereDataString    = implode(" AND ",array_map(fn($attrw)=>"$attrw = :$attrw", $whereAttribute));
+
+        $statement = self::prepare("UPDATE $tableName SET $toSET WHERE $whereDataString ");
+
+        foreach(array_merge($data,$where) as $key => $item){
+            $statement->bindValue(":$key", $item);
+        }
+
+         $statement->execute();
     }
 
     public function save(){

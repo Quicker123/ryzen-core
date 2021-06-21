@@ -55,6 +55,12 @@ class Request
 
             $body = $_POST;
 
+            if(!isset($body['_csrf']) || $body['_csrf'] == "" || empty($body['_csrf']) || is_null($body['_csrf'])){
+
+                echo "csrf_token missing or mismatched";
+                exit;
+            }
+
             foreach ($_POST as $key => $value){
 
                 $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_FULL_SPECIAL_CHARS);

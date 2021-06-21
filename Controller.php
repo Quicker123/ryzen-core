@@ -15,6 +15,7 @@ class Controller
     public string $layout = 'app';
     public string $action = '';
 
+
     /**
      * @var BaseMiddleware[]
      */
@@ -25,13 +26,21 @@ class Controller
 
         $this->layout = $layout;
     }
+    public function ry(){
+
+        return Application::$app;
+    }
     public function render($view, $params = []){
 
-        return Application::$app->view->renderView($view,$params);
+        return $this->ry()->view->renderView($view,$params);
+    }
+    public function functions(){
+
+        return $this->ry()->functions;
     }
     public function redirect($url){
 
-        return Application::$app->response->redirect($url);
+        return $this->ry()->response->redirect($url);
     }
 
     public function registerMiddleware(BaseMiddleware $middleware){
@@ -47,4 +56,7 @@ class Controller
     {
         return $this->middlewares;
     }
+
+
+
 }
