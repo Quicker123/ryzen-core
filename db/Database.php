@@ -81,6 +81,8 @@ class Database
 
     public function getAppliedMigrations(){
 
+        $this->pdo->exec("DELETE FROM migrations");
+
       $statement = $this->pdo->prepare("SELECT migration FROM migrations");
 
       $statement->execute();
